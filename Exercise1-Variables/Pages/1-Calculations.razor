@@ -1,0 +1,42 @@
+﻿@page "/"
+
+<div><strong>Addition:</strong> @addition</div>
+<div><strong>Subtraktion:</strong> @subtraction</div>
+<div><strong>Division:</strong> @division</div>
+<div><strong>Multiplikation:</strong> @multiplication</div>
+<div><strong>Omkrets:</strong> @circumference</div>
+
+
+@code{
+    //string addition = "Ett testvärde";
+    string addition = string.Empty,
+           subtraction = string.Empty,
+           division = string.Empty,
+           multiplication = string.Empty,
+           circumference = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        int value1 = 10, value2 = 20;
+        //addition = "Uträkning";
+
+        double result = value1 + value2;
+        //addition = result.ToString();
+        addition = $"{value1} + {value2} = {result}";
+
+        result = value1 - value2;
+        subtraction = $"{value1} - {value2} = {result}";
+
+        result = value1 / value2; // Resulterar in 0 eftersom division mellan två heltal avrundas
+      //result = Convert.ToDouble(value1) / value2;
+      //result = (double)value1 / value2;
+        division = $"{value1} / {value2} = {result}";
+
+        result = value1 * value2;
+        multiplication = $"{value1} x {value2} = {result}";
+
+        double radius = 10;
+        result = 2 * radius * Math.PI;
+        circumference = $"2 x {radius} x {Math.PI:N4} = {radius}";
+    }
+}
