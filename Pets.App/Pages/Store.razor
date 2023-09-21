@@ -1,0 +1,42 @@
+﻿@page "/"
+@using global::Pets.App.Classes;
+@inject PetStore store
+
+<h1>Pet Store</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Feed</th>
+            <th>Animal</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pet in store.Pets)
+        {
+            <tr>
+                <td>@pet.Name</td>
+                <td>@pet.Feed</td>
+                <td>@pet.Animal</td>
+                <td><button class="btn btn-primary" @onclick="@(() => store.Feed(pet.Id))">Eat</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if(store.Message != string.Empty)
+{
+    <div class="alert alert-warning fade show" role="alert">
+        <strong>Feeding time!</strong> @store.Message
+    </div>
+}
+
+@code{
+    protected override async Task OnInitializedAsync()
+    {
+        await store.LoadPets();
+    }
+}
+
