@@ -1,0 +1,51 @@
+﻿@page "/"
+@using TravelBooking.Classes;
+@using TravelBooking.Services;
+@inject Travel travel
+
+<h1>My Travel</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Distance</th>
+            <th>Transportation</th>
+            <th>Travel Time</th>
+            <th>Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var route in travel.Routes)
+        {
+            <tr>
+                <td>@route.Origin.Name</td>
+                <td>@route.Destination.Name</td>
+                <td>@route.Distance km</td>
+                <td>@route.Transportation.Name</td>
+                <td>@route.TravelTime min</td>
+                <td>@route.Transportation.Speed km/h</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code{
+    protected override void OnInitialized()
+    {
+        var train = new Train("X2000", 130);
+        travel.AddTransportation(train);
+
+        var plane = new Plane("Jumbo Jet", 400);
+        travel.AddTransportation(plane);
+
+        var origin = travel.AddCity("Stockholm", 59.334591, 18.063240);
+        var destination = travel.AddCity("Göteborg", 57.708870, 11.974560);
+
+        travel.AddRoute(origin, destination, train);
+        travel.AddRoute(origin, destination, plane);
+
+    }
+}

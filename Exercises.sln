@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise1-Variables", "Exercise1-Variables\Exercise1-Variables.csproj", "{3AC5F2E0-010B-4C6F-8F6B-36A497AEF8C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pets.App", "Pets.App\Pets.App.csproj", "{590A1173-8D0E-4F86-85C0-294CAC48DFDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pets.App", "Pets.App\Pets.App.csproj", "{590A1173-8D0E-4F86-85C0-294CAC48DFDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelBooking", "TravelBooking\TravelBooking.csproj", "{458490BC-AF91-4C34-A161-B5EB34F0AA3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{590A1173-8D0E-4F86-85C0-294CAC48DFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{590A1173-8D0E-4F86-85C0-294CAC48DFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{590A1173-8D0E-4F86-85C0-294CAC48DFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458490BC-AF91-4C34-A161-B5EB34F0AA3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458490BC-AF91-4C34-A161-B5EB34F0AA3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458490BC-AF91-4C34-A161-B5EB34F0AA3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458490BC-AF91-4C34-A161-B5EB34F0AA3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
